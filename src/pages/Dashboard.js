@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import AppBar from './AppBar';
+import AppBar from './appbar/AppBar';
 import ClippedDrawer from './Drawer';
 import Content from './Content';
 
