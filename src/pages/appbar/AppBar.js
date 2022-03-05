@@ -24,6 +24,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { Tooltip } from '@mui/material';
 import { Modal } from '@mui/material';
 
+import ClippedDrawer from '../Drawer';
 
 export default function ButtonAppBar() {
  
@@ -185,15 +186,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     </Menu>
   );
 
+  // Left Side Drawer Menu //
+  const [open, setOpen] = React.useState(false);
+  const ToggleDrawer = () => {
+    setOpen(!open);
+  };
   
-
 
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
-          <IconButton
+          <IconButton onClick={ToggleDrawer}
             size="large"
             edge="start"
             color="inherit"
@@ -202,7 +207,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
           >
              <MenuIcon />
           </IconButton>
-         
+          <ClippedDrawer open={open} ToggleDrawer={ToggleDrawer}/>
+
           <Typography variant="h6"  noWrap
             component="div"
             sx={{ display: { sm: 'block' }, paddingRight:'10px' }}>

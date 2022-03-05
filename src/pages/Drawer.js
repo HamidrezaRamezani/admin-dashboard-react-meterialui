@@ -10,12 +10,14 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
-const drawerWidth = 240;
+const drawerWidth = 290;
 
-export default function ClippedDrawer() {
+export default function ClippedDrawer({open,ToggleDrawer}) {
     return (
         <Drawer
-            variant="permanent"
+            variant="temporary"
+            open={open}
+            onClose={ToggleDrawer}
             sx={{
             width: drawerWidth,
             flexShrink: 0,
@@ -47,6 +49,6 @@ export default function ClippedDrawer() {
                 </List>
             </Box>
         </Drawer>
-        );
-    }
+    );
+}
     
